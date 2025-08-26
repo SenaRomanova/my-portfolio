@@ -6,6 +6,13 @@ export const baseTheme = createTheme();
 
 const theme = createTheme({
   typography: {
+    h2: {
+      fontFamily: "'DM Serif Text', serif",
+      [baseTheme.breakpoints.up("xs")]: { fontSize: "2.8rem" },
+      [baseTheme.breakpoints.up("md")]: { fontSize: "3.1rem" },
+      [baseTheme.breakpoints.up("lg")]: { fontSize: "3.5rem" },
+    },
+
     h3: {
       fontFamily: "'DM Serif Text', serif",
       [baseTheme.breakpoints.up("xs")]: { fontSize: "2.5rem" },

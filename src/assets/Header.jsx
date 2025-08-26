@@ -1,23 +1,32 @@
 import Box from "@mui/material/Box";
-import { Typography } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
 
 export default function Header() {
   return (
     <Box
       sx={{
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        bgcolor: "rgb(18, 13, 43)",
         width: "100%",
-        height: "10vh",
-        padding: 3,
+        flexDirection: "column",
       }}
     >
-      <Typography variant="h3" sx={{ color: "rgb(243, 200, 221)" }}>
-        SENA ROMANOVA
-      </Typography>
+      <Box
+        sx={{
+          flexDirection: "row",
+          justifyContent: "flex-start",
+          alignItems: "center",
+          width: "100%",
+          height: "10vh",
+          padding: 3,
+          marginBottom: 2,
+        }}
+      >
+        <Typography variant="h2" sx={{ color: "rgb(255, 236, 201)" }}>
+          SENA ROMANOVA
+        </Typography>
+      </Box>
+
+      <Divider sx={{ height: "0.3px", bgcolor: "rgb(255, 236, 201)" }} />
     </Box>
   );
 }

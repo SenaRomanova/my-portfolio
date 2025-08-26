@@ -31,13 +31,13 @@ export default function ProjectCard({
       sx={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "flex-end",
+        justifyContent: "flex-start",
         alignItems: "flex-end",
         width: 400,
         height: 500,
-        bgcolor: "rgb(118, 71, 134)",
-        color: "white",
-        border: "2px solid rgb(243,200,221)",
+        //bgcolor: " rgb(118, 71, 134)",
+        bgcolor: "rgba(75, 16, 52, 0.85)",
+        border: "0.8px solid rgb(255, 236, 201)",
         padding: 1,
       }}
     >
@@ -101,9 +101,9 @@ export default function ProjectCard({
         alignItems: "flex-end",
         width: 400,
         height: 500,
-        bgcolor: "rgb(118, 71, 134)",
+        bgcolor: "rgba(243,200,221, 0.75)",
         color: "white",
-        border: "2px solid rgb(243,200,221)",
+        border: "2px solid rgb(118, 71, 134)",
         padding: 1,
         transform: "rotateY(180deg)",
       }}
@@ -113,7 +113,7 @@ export default function ProjectCard({
           <Typography
             variant="body2"
             align="right"
-            sx={{ color: "rgb(255, 236, 201)" }}
+            sx={{ color: "rgb(71,21,53)" }}
           >
             {detailedDescription}
           </Typography>
@@ -142,23 +142,30 @@ export default function ProjectCard({
 
   return (
     <Box
-      onClick={flipCard}
       sx={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        transition: "transform 0.4s",
-        transformStyle: "preserve-3d",
-        transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
-        margin: 1,
-        "&:hover": {
-          cursor: "pointer",
-          boxShadow: 5,
-        },
+        "&:hover": { transform: "scale(1.05)", transition: "0.3s" },
+        "&:not(:hover)": { transform: "scale(1)", transition: "0.3s" },
       }}
     >
-      {flipped ? cardBack : cardFront}
+      <Box
+        onClick={flipCard}
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          transition: "transform 0.4s",
+          transformStyle: "preserve-3d",
+          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          margin: 1,
+          "&:hover": {
+            cursor: "pointer",
+            boxShadow: 5,
+          },
+        }}
+      >
+        {flipped ? cardBack : cardFront}
+      </Box>
     </Box>
   );
 }
