@@ -26,16 +26,38 @@ function App() {
         }}
       >
         <Header />
-        <ProjectCard
-          title={"Project 1"}
-          description={"Short Description"}
-          src={MallocImg}
-          technologies={["C", "Git", "Emacs"]}
-          detailedDescription={
-            "This is a longer description of the project. It goes into more detail about what the project entailed, the challenges faced, and the outcomes achieved."
-          }
-          detailedTechnologies={["C", "Git", "Emacs", "Posix"]}
-        />
+        <Box sx={{ display: "flex", flexDirection: "row" }}>
+          <ProjectCard
+            title={"Project 1"}
+            description={"Short Description"}
+            src={MallocImg}
+            technologies={["C", "Git", "Emacs"]}
+            detailedDescription={
+              "This is a longer description of the project. It goes into more detail about what the project entailed, the challenges faced, and the outcomes achieved."
+            }
+            detailedTechnologies={["C", "Git", "Emacs", "Posix"]}
+          />
+          <ProjectCard
+            title={"Project 1"}
+            description={"Short Description"}
+            src={MallocImg}
+            technologies={["C", "Git", "Emacs"]}
+            detailedDescription={
+              "This is a longer description of the project. It goes into more detail about what the project entailed, the challenges faced, and the outcomes achieved."
+            }
+            detailedTechnologies={["C", "Git", "Emacs", "Posix"]}
+          />
+          <ProjectCard
+            title={"Project 1"}
+            description={"Short Description"}
+            src={MallocImg}
+            technologies={["C", "Git", "Emacs"]}
+            detailedDescription={
+              "This is a longer description of the project. It goes into more detail about what the project entailed, the challenges faced, and the outcomes achieved."
+            }
+            detailedTechnologies={["C", "Git", "Emacs", "Posix"]}
+          />
+        </Box>
       </Box>
     </ThemeProvider>
   );

@@ -16,8 +16,14 @@ export default function ProjectCard({
   detailedTechnologies,
 }) {
   const [flipped, setFlipped] = useState(false);
+  const [isFlipping, setIsFlipping] = useState(false);
+
   const flipCard = () => {
+    setIsFlipping(true);
     setFlipped(!flipped);
+    setTimeout(() => {
+      setIsFlipping(false);
+    }, 170); // Duration of the flip animation
   };
 
   const cardFront = (
@@ -27,41 +33,45 @@ export default function ProjectCard({
         flexDirection: "column",
         justifyContent: "flex-end",
         alignItems: "flex-end",
-        width: 245,
-        height: 300,
+        width: 400,
+        height: 500,
         bgcolor: "rgb(118, 71, 134)",
         color: "white",
         border: "2px solid rgb(243,200,221)",
         padding: 1,
       }}
     >
-      <CardMedia
-        component="img"
-        height="140"
-        image={src}
-        alt="Project Image"
-        sx={{ borderRadius: 1, border: "1px solid rgb(75,21,53)" }}
-      />
-      <CardContent>
-        <Typography
-          gutterBottom
-          align="right"
-          variant="h5"
-          component="div"
-          sx={{
-            color: "rgb(255, 236, 201)",
-          }}
-        >
-          {title}
-        </Typography>
-        <Typography
-          variant="body2"
-          align="right"
-          sx={{ color: "rgb(255, 236, 201)" }}
-        >
-          {description}
-        </Typography>
-      </CardContent>
+      {!isFlipping && (
+        <>
+          <CardMedia
+            component="img"
+            height="60%"
+            image={src}
+            alt="Project Image"
+            sx={{ borderRadius: 1, border: "1px solid rgb(75,21,53)" }}
+          />
+          <CardContent>
+            <Typography
+              gutterBottom
+              align="right"
+              variant="h5"
+              component="div"
+              sx={{
+                color: "rgb(255, 236, 201)",
+              }}
+            >
+              {title}
+            </Typography>
+            <Typography
+              variant="body2"
+              align="right"
+              sx={{ color: "rgb(255, 236, 201)" }}
+            >
+              {description}
+            </Typography>
+          </CardContent>
+        </>
+      )}
 
       <Box sx={{ flexDirection: "row" }}>
         {technologies.map((tech, index) => (
@@ -89,8 +99,8 @@ export default function ProjectCard({
         flexDirection: "column",
         justifyContent: "flex-end",
         alignItems: "flex-end",
-        width: 245,
-        height: 300,
+        width: 400,
+        height: 500,
         bgcolor: "rgb(118, 71, 134)",
         color: "white",
         border: "2px solid rgb(243,200,221)",
@@ -98,15 +108,17 @@ export default function ProjectCard({
         transform: "rotateY(180deg)",
       }}
     >
-      <CardContent>
-        <Typography
-          variant="body2"
-          align="right"
-          sx={{ color: "rgb(255, 236, 201)" }}
-        >
-          {detailedDescription}
-        </Typography>
-      </CardContent>
+      {!isFlipping && (
+        <CardContent>
+          <Typography
+            variant="body2"
+            align="right"
+            sx={{ color: "rgb(255, 236, 201)" }}
+          >
+            {detailedDescription}
+          </Typography>
+        </CardContent>
+      )}
 
       <Box sx={{ flexDirection: "row" }}>
         {detailedTechnologies.map((tech, index) => (
@@ -132,9 +144,14 @@ export default function ProjectCard({
     <Box
       onClick={flipCard}
       sx={{
-        transition: "transform 0.6s",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        transition: "transform 0.4s",
         transformStyle: "preserve-3d",
         transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+        margin: 1,
         "&:hover": {
           cursor: "pointer",
           boxShadow: 5,
