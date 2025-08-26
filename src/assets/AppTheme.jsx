@@ -1,35 +1,43 @@
 import { createTheme } from "@mui/material";
+import "@fontsource/dm-serif-text";
+import "@fontsource/roboto/300.css";
 
 export const baseTheme = createTheme();
 
 const theme = createTheme({
   typography: {
     h3: {
+      fontFamily: "'DM Serif Text', serif",
       [baseTheme.breakpoints.up("xs")]: { fontSize: "2.5rem" },
       [baseTheme.breakpoints.up("md")]: { fontSize: "2.6rem" },
       [baseTheme.breakpoints.up("lg")]: { fontSize: "2.7rem" },
     },
     h4: {
+      fontFamily: "'DM Serif Text', serif",
       [baseTheme.breakpoints.up("xs")]: { fontSize: "1.55rem" },
       [baseTheme.breakpoints.up("md")]: { fontSize: "1.65rem" },
       [baseTheme.breakpoints.up("lg")]: { fontSize: "1.75Srem" },
     },
     h5: {
+      fontFamily: "'DM Serif Text', serif",
       [baseTheme.breakpoints.up("xs")]: { fontSize: "1.35rem" },
       [baseTheme.breakpoints.up("md")]: { fontSize: "1.4rem" },
       [baseTheme.breakpoints.up("lg")]: { fontSize: "1.5rem" },
     },
     h6: {
+      fontFamily: "'DM Serif Text', serif",
       [baseTheme.breakpoints.up("xs")]: { fontSize: "1rem" },
       [baseTheme.breakpoints.up("md")]: { fontSize: "1.125rem" },
       [baseTheme.breakpoints.up("lg")]: { fontSize: "1.25rem" },
     },
     body1: {
+      fontFamily: "'Roboto', sans-serif",
       [baseTheme.breakpoints.up("xs")]: { fontSize: "1.2rem" },
       [baseTheme.breakpoints.up("md")]: { fontSize: "1.25rem" },
       [baseTheme.breakpoints.up("lg")]: { fontSize: "1.3rem" },
     },
     button: {
+      fontFamily: "'Roboto', sans-serif",
       [baseTheme.breakpoints.up("xs")]: { fontSize: "2rem" },
       [baseTheme.breakpoints.up("md")]: { fontSize: "1.5rem" },
       [baseTheme.breakpoints.up("lg")]: { fontSize: "1.3rem" },
