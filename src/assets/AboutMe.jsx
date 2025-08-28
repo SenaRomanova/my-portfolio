@@ -12,7 +12,6 @@ export default function AboutMe() {
         width: "100%",
         justifyContent: "center",
         alignItems: "center",
-        padding: 3,
       }}
     >
       <Box sx={{ padding: 3 }}>
@@ -20,7 +19,6 @@ export default function AboutMe() {
           variant="h3"
           sx={{
             color: "rgb(255, 236, 201)",
-            paddingRight: 3,
             paddingBottom: 2,
           }}
         >

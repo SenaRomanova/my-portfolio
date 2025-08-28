@@ -11,6 +11,8 @@ import AppTheme from "./assets/AppTheme";
 
 import MallocImg from "./assets/MallocCallocReallocimg.png";
 import AboutMe from "./assets/AboutMe";
+import ContactForm from "./assets/ContactMe";
+import ExperienceCard from "./assets/ExperienceCard";
 
 function App() {
   return (
@@ -28,6 +30,27 @@ function App() {
         >
           <Header />
           <AboutMe />
+          <Typography
+            variant="h3"
+            sx={{
+              color: "rgb(255, 236, 201)",
+              paddingTop: 5,
+              paddingBottom: 2,
+            }}
+          >
+            My Projects
+          </Typography>
+
+          <ExperienceCard
+            title={"Project 1"}
+            description={"Short Description"}
+            src={MallocImg}
+            technologies={["C", "Git", "Emacs"]}
+            detailedDescription={
+              "This is a longer description of the project. It goes into more detail about what the project entailed, the challenges faced, and the outcomes achieved."
+            }
+            detailedTechnologies={["C", "Git", "Emacs", "Posix"]}
+          />
 
           <Box sx={{ display: "flex", flexDirection: "row" }}>
             <ProjectCard
@@ -61,6 +84,17 @@ function App() {
               detailedTechnologies={["C", "Git", "Emacs", "Posix"]}
             />
           </Box>
+          <Typography
+            variant="h3"
+            sx={{
+              color: "rgb(255, 236, 201)",
+              paddingTop: 5,
+              paddingBottom: 2,
+            }}
+          >
+            Contact Me
+          </Typography>
+          <ContactForm />
         </Box>
       </Box>
     </ThemeProvider>

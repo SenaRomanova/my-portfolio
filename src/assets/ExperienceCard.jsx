@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import "@fontsource/roboto/300.css";
 import { useState } from "react";
 
-export default function ProjectCard({
+export default function ExperienceCard({
   src,
   title,
   description,
@@ -23,55 +23,59 @@ export default function ProjectCard({
     setFlipped(!flipped);
     setTimeout(() => {
       setIsFlipping(false);
-    }, 170); // Duration of the flip animation
+    }, 200); // Duration of the flip animation
   };
 
   const cardFront = (
     <Card
       sx={{
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
         justifyContent: "flex-start",
-        alignItems: "flex-end",
-        width: "inherit",
-        height: "inherit",
-        //bgcolor: " rgb(118, 71, 134)",
+        alignItems: "center",
+        width: "100%",
+        height: 500,
         bgcolor: "rgba(75, 16, 52, 0.5)",
-        border: "0.8px solid rgb(255, 236, 201)",
+        border:
+          "0.8px solid linear-gradient(90deg, rgba(118,71,134,1) 0%, rgba(209,131,169,1) 100%)",
         padding: 1,
       }}
     >
-      {!isFlipping && (
-        <>
-          <CardMedia
-            component="img"
-            height="60%"
-            image={src}
-            alt="Project Image"
-            sx={{ borderRadius: 1, border: "1px solid rgb(75,21,53)" }}
-          />
-          <CardContent>
-            <Typography
-              gutterBottom
-              align="right"
-              variant="h5"
-              component="div"
-              sx={{
-                color: "rgb(255, 236, 201)",
-              }}
-            >
-              {title}
-            </Typography>
-            <Typography
-              variant="body2"
-              align="right"
-              sx={{ color: "rgb(255, 236, 201)" }}
-            >
-              {description}
-            </Typography>
-          </CardContent>
-        </>
-      )}
+      <CardMedia
+        component="img"
+        image={src}
+        alt="Project Image"
+        sx={{
+          width: "50%",
+          height: "auto",
+          borderRadius: 1,
+          border: "1px solid rgb(75,21,53)",
+        }}
+      />
+      <CardContent
+        sx={{
+          justifyContent: "flex-end",
+        }}
+      >
+        <Typography
+          gutterBottom
+          align="right"
+          variant="h5"
+          component="div"
+          sx={{
+            color: "rgb(255, 236, 201)",
+          }}
+        >
+          {title}
+        </Typography>
+        <Typography
+          variant="body2"
+          align="right"
+          sx={{ color: "rgb(255, 236, 201)" }}
+        >
+          {description}
+        </Typography>
+      </CardContent>
 
       <Box sx={{ flexDirection: "row" }}>
         {technologies.map((tech, index) => (
@@ -96,28 +100,25 @@ export default function ProjectCard({
     <Card
       sx={{
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-end",
-        alignItems: "flex-end",
-        width: "inherit",
-        height: "inherit",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        width: "100%",
+        height: 500,
         bgcolor: "rgba(243,200,221, 0.75)",
         color: "white",
         border: "2px solid rgb(118, 71, 134)",
         padding: 1,
       }}
     >
-      {!isFlipping && (
-        <CardContent>
-          <Typography
-            variant="body2"
-            align="right"
-            sx={{ color: "rgb(71,21,53)" }}
-          >
-            {detailedDescription}
-          </Typography>
-        </CardContent>
-      )}
+      <CardContent>
+        <Typography
+          variant="body2"
+          align="right"
+          sx={{ color: "rgb(71,21,53)" }}
+        >
+          {detailedDescription}
+        </Typography>
+      </CardContent>
 
       <Box sx={{ flexDirection: "row" }}>
         {detailedTechnologies.map((tech, index) => (
@@ -151,11 +152,11 @@ export default function ProjectCard({
         onClick={flipCard}
         sx={{
           position: "relative", // important so children can be absolute
-          width: 500,
+          width: 1000,
           height: 500,
           transition: "transform 0.6s",
           transformStyle: "preserve-3d",
-          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          transform: flipped ? "rotateX(180deg)" : "rotateX(0deg)",
           margin: 1,
           "&:hover": {
             cursor: "pointer",
@@ -181,7 +182,7 @@ export default function ProjectCard({
             position: "absolute", // stack in the same spot
             width: "100%",
             height: "100%",
-            transform: "rotateY(180deg)", // rotated behind
+            transform: "rotateX(180deg)", // rotated behind
             backfaceVisibility: "hidden",
           }}
         >
