@@ -34,8 +34,7 @@ export default function ExperienceCard({
         flexDirection: "row",
         [baseTheme.breakpoints.down("md")]: {
           flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          alignItems: "flex-end",
         },
         justifyContent: "flex-start",
         alignItems: "center",
@@ -45,6 +44,7 @@ export default function ExperienceCard({
         border: "2px solid",
         borderImage:
           "linear-gradient(45deg, rgba(253, 68, 158, 1), rgba(235, 189, 105, 1)) 1",
+        padding: 1,
       }}
     >
       <CardMedia
@@ -53,14 +53,26 @@ export default function ExperienceCard({
         alt="Project Image"
         sx={{
           width: "50%",
+          [baseTheme.breakpoints.down("md")]: {
+            width: "95%",
+            height: "auto",
+            marginTop: 2,
+            alignSelf: "center",
+          },
           height: "auto",
+          alignContent: "center",
           borderRadius: 1,
           border: "1px solid rgb(75,21,53)",
         }}
       />
+
       <CardContent
         sx={{
+          display: "flex",
+          height: "100%",
+          flexDirection: "column",
           justifyContent: "flex-end",
+          alignSelf: "flex-end",
         }}
       >
         <Typography
@@ -83,7 +95,7 @@ export default function ExperienceCard({
         </Typography>
       </CardContent>
 
-      <Box sx={{ flexDirection: "row" }}>
+      <Box sx={{ flexDirection: "row", justifyContent: "flex-end" }}>
         {technologies.map((tech, index) => (
           <Chip
             key={index}
@@ -106,6 +118,12 @@ export default function ExperienceCard({
     <Card
       sx={{
         display: "flex",
+
+        [baseTheme.breakpoints.down("md")]: {
+          flexDirection: "column",
+          alignItems: "flex-end",
+          justifyContent: "flex-end",
+        },
         justifyContent: "flex-start",
         alignItems: "center",
         width: "100%",
