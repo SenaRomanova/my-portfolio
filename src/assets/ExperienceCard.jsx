@@ -36,9 +36,8 @@ export default function ExperienceCard({
         width: "100%",
         height: 500,
         bgcolor: "rgba(75, 16, 52, 0.5)",
-        border:
-          "0.8px solid linear-gradient(90deg, rgba(118,71,134,1) 0%, rgba(209,131,169,1) 100%)",
-        padding: 1,
+        border: "2px solid",
+        borderImage: "linear-gradient(45deg, rgba(253, 68, 158, 1), rgba(235, 189, 105, 1)) 1",
       }}
     >
       <CardMedia
@@ -152,7 +151,7 @@ export default function ExperienceCard({
         onClick={flipCard}
         sx={{
           position: "relative", // important so children can be absolute
-          width: 1000,
+          width: 1200,
           height: 500,
           transition: "transform 0.6s",
           transformStyle: "preserve-3d",

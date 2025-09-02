@@ -36,8 +36,9 @@ export default function ProjectCard({
         width: "inherit",
         height: "inherit",
         //bgcolor: " rgb(118, 71, 134)",
-        bgcolor: "rgba(75, 16, 52, 0.5)",
-        border: "0.8px solid rgb(255, 236, 201)",
+        bgcolor: "rgba(75, 16, 52, 0.29)",
+        border: "2px solid",
+        borderImage: "linear-gradient(45deg, rgba(253, 68, 158, 1), rgba(235, 189, 105, 1)) 1",
         padding: 1,
       }}
     >
@@ -151,8 +152,8 @@ export default function ProjectCard({
         onClick={flipCard}
         sx={{
           position: "relative", // important so children can be absolute
-          width: 500,
-          height: 500,
+          width: 350,
+          height: 350,
           transition: "transform 0.6s",
           transformStyle: "preserve-3d",
           transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",

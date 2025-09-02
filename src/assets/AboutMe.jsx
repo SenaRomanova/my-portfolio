@@ -12,6 +12,7 @@ export default function AboutMe() {
         width: "100%",
         justifyContent: "center",
         alignItems: "center",
+        marginTop: 5,
       }}
     >
       <Box sx={{ padding: 3 }}>
