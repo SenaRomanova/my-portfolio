@@ -57,10 +57,10 @@ const theme = createTheme({
         root: {
           fontFamily: "'Roboto', sans-serif",
           [baseTheme.breakpoints.up("xs")]: {
-            fontSize: "0.8rem",
+            fontSize: "1.5rem",
           },
           [baseTheme.breakpoints.up("md")]: {
-            fontSize: "1rem",
+            fontSize: "1.3rem",
           },
           [baseTheme.breakpoints.up("lg")]: {
             fontSize: "1.2rem",
