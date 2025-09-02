@@ -1,8 +1,9 @@
-import { Avatar, Tooltip } from "@mui/material";
+import { Avatar, Button, Tooltip } from "@mui/material";
 import myPhoto from "./myPhoto.jpeg";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { baseTheme } from "./AppTheme";
+import LaunchIcon from "@mui/icons-material/Launch";
 
 export default function AboutMe() {
   return (
@@ -41,6 +42,27 @@ export default function AboutMe() {
           can find me drawing, cooking, or indulging in my love for video games.
           Let's connect and create something amazing together!
         </Typography>
+
+        <Box
+          sx={{
+            marginTop: 3,
+            border: "2px solid",
+            borderImage:
+              "linear-gradient(45deg, rgba(253, 68, 158, 1), rgba(235, 189, 105, 1)) 1",
+            width: "fit-content",
+          }}
+        >
+          <Button
+            component="a"
+            href="https://drive.google.com/file/d/1UKvCxVP88i-m1i4gH8f-aZ7Zl89Vf5iu/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="white"
+          >
+            <LaunchIcon sx={{ marginRight: 1 }} />
+            My Resume
+          </Button>
+        </Box>
       </Box>
 
       <Tooltip title=" Hey, this is me :P ">

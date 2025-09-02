@@ -125,7 +125,6 @@ export default function ProjectCard({
               label={tech}
               sx={{
                 bgcolor: "rgb(209,131,169)",
-
                 border: "1px solid rgb(75,21,53)",
                 "& .MuiChip-label": {
                   color: "rgb(255, 236, 201)",

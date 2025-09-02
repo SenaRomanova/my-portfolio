@@ -43,6 +43,16 @@ export default function Header() {
 
         <Box>
           <Button
+            component="a"
+            href="https://drive.google.com/file/d/1UKvCxVP88i-m1i4gH8f-aZ7Zl89Vf5iu/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="white"
+          >
+            {/*scroll behavior smooth in css html is what actually made it smooth*/}
+            Resume
+          </Button>
+          <Button
             href="#projects"
             color="white"
             sx={{ "&:hover": { color: "rgb(209,131,169)" } }}
@@ -50,6 +60,7 @@ export default function Header() {
             {/*scroll behavior smooth in css html is what actually made it smooth*/}
             Projects
           </Button>
+
           <Button
             href="#experience"
             color="white"
@@ -159,6 +170,18 @@ export default function Header() {
                   }}
                 />
               </IconButton>
+              <Button
+                component="a"
+                href="https://drive.google.com/file/d/1UKvCxVP88i-m1i4gH8f-aZ7Zl89Vf5iu/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="white"
+                onClick={() => setMenuOpen(false)}
+                sx={{ "&:hover": { color: "rgb(75,21,53)" } }}
+              >
+                {/*scroll behavior smooth in css html is what actually made it smooth*/}
+                Resume
+              </Button>
               <Button
                 href="#projects"
                 color="white"
