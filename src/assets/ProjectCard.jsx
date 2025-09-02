@@ -38,7 +38,8 @@ export default function ProjectCard({
         //bgcolor: " rgb(118, 71, 134)",
         bgcolor: "rgba(75, 16, 52, 0.29)",
         border: "2px solid",
-        borderImage: "linear-gradient(45deg, rgba(253, 68, 158, 1), rgba(235, 189, 105, 1)) 1",
+        borderImage:
+          "linear-gradient(45deg, rgba(253, 68, 158, 1), rgba(235, 189, 105, 1)) 1",
         padding: 1,
       }}
     >
@@ -143,7 +144,7 @@ export default function ProjectCard({
   return (
     <Box
       sx={{
-        perspective: "1000px", // keep perspective for depth
+        perspective: "1000px", //keep perspective for depth
         "&:hover": { transform: "scale(1.05)", transition: "0.3s" },
         "&:not(:hover)": { transform: "scale(1)", transition: "0.3s" },
       }}
@@ -151,7 +152,7 @@ export default function ProjectCard({
       <Box
         onClick={flipCard}
         sx={{
-          position: "relative", // important so children can be absolute
+          position: "relative",
           width: 350,
           height: 350,
           transition: "transform 0.6s",
@@ -167,7 +168,7 @@ export default function ProjectCard({
         {/* Front */}
         <Box
           sx={{
-            position: "absolute", // stack in the same spot
+            position: "absolute", //stack in the same spot
             width: "100%",
             height: "100%",
             backfaceVisibility: "hidden",
@@ -179,10 +180,10 @@ export default function ProjectCard({
         {/* Back */}
         <Box
           sx={{
-            position: "absolute", // stack in the same spot
+            position: "absolute", //stack in the same spot
             width: "100%",
             height: "100%",
-            transform: "rotateY(180deg)", // rotated behind
+            transform: "rotateY(180deg)", //rotated behind
             backfaceVisibility: "hidden",
           }}
         >

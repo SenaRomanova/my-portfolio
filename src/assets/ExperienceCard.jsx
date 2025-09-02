@@ -6,6 +6,7 @@ import { Chip } from "@mui/material";
 import Box from "@mui/material/Box";
 import "@fontsource/roboto/300.css";
 import { useState } from "react";
+import { baseTheme } from "./AppTheme";
 
 export default function ExperienceCard({
   src,
@@ -31,13 +32,19 @@ export default function ExperienceCard({
       sx={{
         display: "flex",
         flexDirection: "row",
+        [baseTheme.breakpoints.down("md")]: {
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        },
         justifyContent: "flex-start",
         alignItems: "center",
         width: "100%",
         height: 500,
         bgcolor: "rgba(75, 16, 52, 0.5)",
         border: "2px solid",
-        borderImage: "linear-gradient(45deg, rgba(253, 68, 158, 1), rgba(235, 189, 105, 1)) 1",
+        borderImage:
+          "linear-gradient(45deg, rgba(253, 68, 158, 1), rgba(235, 189, 105, 1)) 1",
       }}
     >
       <CardMedia
@@ -145,16 +152,18 @@ export default function ExperienceCard({
         perspective: "1000px", // keep perspective for depth
         "&:hover": { transform: "scale(1.05)", transition: "0.3s" },
         "&:not(:hover)": { transform: "scale(1)", transition: "0.3s" },
+        width: "100%",
+        height: 500,
       }}
     >
       <Box
         onClick={flipCard}
         sx={{
-          position: "relative", // important so children can be absolute
-          width: 1200,
-          height: 500,
+          width: "100%",
+          height: "100%",
           transition: "transform 0.6s",
           transformStyle: "preserve-3d",
+          transformOrigin: "center center",
           transform: flipped ? "rotateX(180deg)" : "rotateX(0deg)",
           margin: 1,
           "&:hover": {

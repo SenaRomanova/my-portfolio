@@ -55,6 +55,7 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          fontFamily: "'Roboto', sans-serif",
           [baseTheme.breakpoints.up("xs")]: {
             fontSize: "0.8rem",
           },

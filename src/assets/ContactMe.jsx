@@ -58,7 +58,8 @@ export default function ContactForm() {
           sx={{
             "& .MuiOutlinedInput-root": {
               "& fieldset": {
-                borderWidth: "2px", // normal thickness
+                borderWidth: "2px",
+                borderColor: "rgb(118, 71, 134)", // normal thickness
               },
               "&:hover fieldset": {
                 borderWidth: "2px",
@@ -81,6 +82,7 @@ export default function ContactForm() {
             "& .MuiOutlinedInput-root": {
               "& fieldset": {
                 borderWidth: "2px", // normal thickness
+                borderColor: "rgb(118, 71, 134)",
               },
               "&:hover fieldset": {
                 borderWidth: "2px",
@@ -107,6 +109,8 @@ export default function ContactForm() {
             "& .MuiOutlinedInput-root": {
               "& fieldset": {
                 borderWidth: "2px", // normal thickness
+
+                borderColor: "rgb(118, 71, 134)",
               },
               "&:hover fieldset": {
                 borderWidth: "2px",
@@ -125,7 +129,7 @@ export default function ContactForm() {
           sx={{
             color: "black",
             "&:hover": { color: "rgb(118, 71, 134)" },
-            border: "1px solid rgb(118, 71, 134)",
+            border: "2px solid rgb(118, 71, 134)",
           }}
         >
           Send

@@ -1,14 +1,19 @@
-import { Avatar } from "@mui/material";
+import { Avatar, Tooltip } from "@mui/material";
 import myPhoto from "./myPhoto.jpeg";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { baseTheme } from "./AppTheme";
 
 export default function AboutMe() {
   return (
     <Box
       sx={{
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
+
+        [baseTheme.breakpoints.up("md")]: {
+          flexDirection: "row",
+        },
         width: "100%",
         justifyContent: "center",
         alignItems: "center",
@@ -37,14 +42,17 @@ export default function AboutMe() {
           Let's connect and create something amazing together!
         </Typography>
       </Box>
-      <Avatar
-        alt="Sena Romanova avatar"
-        src={myPhoto}
-        sx={{
-          justifySelf: "center",
-          border: "2px solid rgb(255, 236, 201)",
-        }}
-      />
+
+      <Tooltip title=" Hey, this is me :P ">
+        <Avatar
+          alt="Sena Romanova avatar"
+          src={myPhoto}
+          sx={{
+            justifySelf: "center",
+            border: "2px solid rgb(255, 236, 201)",
+          }}
+        />
+      </Tooltip>
     </Box>
   );
 }
