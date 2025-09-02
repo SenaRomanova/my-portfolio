@@ -43,54 +43,50 @@ export default function ProjectCard({
         padding: 1,
       }}
     >
-      {!isFlipping && (
-        <>
-          <CardMedia
-            component="img"
-            height="60%"
-            image={src}
-            alt="Project Image"
-            sx={{ borderRadius: 1, border: "1px solid rgb(75,21,53)" }}
-          />
-          <CardContent>
-            <Typography
-              gutterBottom
-              align="right"
-              variant="h5"
-              component="div"
-              sx={{
-                color: "rgb(255, 236, 201)",
-              }}
-            >
-              {title}
-            </Typography>
-            <Typography
-              variant="body2"
-              align="right"
-              sx={{ color: "rgb(255, 236, 201)" }}
-            >
-              {description}
-            </Typography>
-          </CardContent>
-        </>
-      )}
+      <CardMedia
+        component="img"
+        height="60%"
+        image={src}
+        alt="Project Image"
+        sx={{ borderRadius: 1, border: "1px solid rgb(75,21,53)" }}
+      />
+      <CardContent>
+        <Typography
+          gutterBottom
+          align="right"
+          variant="h5"
+          component="div"
+          sx={{
+            color: "rgb(255, 236, 201)",
+          }}
+        >
+          {title}
+        </Typography>
+        <Typography
+          variant="body2"
+          align="right"
+          sx={{ color: "rgb(255, 236, 201)" }}
+        >
+          {description}
+        </Typography>
 
-      <Box sx={{ flexDirection: "row" }}>
-        {technologies.map((tech, index) => (
-          <Chip
-            key={index}
-            label={tech}
-            sx={{
-              bgcolor: "rgb(209,131,169)",
-              border: "1px solid rgb(75,21,53)",
-              "& .MuiChip-label": {
-                color: "rgb(255, 236, 201)",
-                fontFamily: "'Roboto', sans-serif",
-              },
-            }}
-          ></Chip>
-        ))}
-      </Box>
+        <Box sx={{ flexDirection: "row", paddingTop: 1 }}>
+          {technologies.map((tech, index) => (
+            <Chip
+              key={index}
+              label={tech}
+              sx={{
+                bgcolor: "rgb(209,131,169)",
+                border: "1px solid rgb(75,21,53)",
+                "& .MuiChip-label": {
+                  color: "rgb(255, 236, 201)",
+                  fontFamily: "'Roboto', sans-serif",
+                },
+              }}
+            ></Chip>
+          ))}
+        </Box>
+      </CardContent>
     </Card>
   );
 
@@ -99,45 +95,47 @@ export default function ProjectCard({
       sx={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "flex-end",
+        justifyContent: "flex-start",
         alignItems: "flex-end",
         width: "inherit",
         height: "inherit",
         bgcolor: "rgba(243,200,221, 0.75)",
-        color: "white",
         border: "2px solid rgb(118, 71, 134)",
         padding: 1,
       }}
     >
-      {!isFlipping && (
-        <CardContent>
-          <Typography
-            variant="body2"
-            align="right"
-            sx={{ color: "rgb(71,21,53)" }}
-          >
-            {detailedDescription}
-          </Typography>
-        </CardContent>
-      )}
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          height: "100%",
+          width: "100%",
+          justifyContent: "flex-end",
+          alignItems: "flex-end",
+        }}
+      >
+        <Typography variant="body2" sx={{ color: "rgb(71,21,53)" }}>
+          {detailedDescription}
+        </Typography>
 
-      <Box sx={{ flexDirection: "row" }}>
-        {detailedTechnologies.map((tech, index) => (
-          <Chip
-            key={index}
-            label={tech}
-            sx={{
-              bgcolor: "rgb(209,131,169)",
+        <Box sx={{ flexDirection: "row", paddingTop: 1 }}>
+          {detailedTechnologies.map((tech, index) => (
+            <Chip
+              key={index}
+              label={tech}
+              sx={{
+                bgcolor: "rgb(209,131,169)",
 
-              border: "1px solid rgb(75,21,53)",
-              "& .MuiChip-label": {
-                color: "rgb(255, 236, 201)",
-                fontFamily: "'Roboto', sans-serif",
-              },
-            }}
-          ></Chip>
-        ))}
-      </Box>
+                border: "1px solid rgb(75,21,53)",
+                "& .MuiChip-label": {
+                  color: "rgb(255, 236, 201)",
+                  fontFamily: "'Roboto', sans-serif",
+                },
+              }}
+            ></Chip>
+          ))}
+        </Box>
+      </CardContent>
     </Card>
   );
 

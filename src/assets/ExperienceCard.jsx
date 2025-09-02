@@ -35,8 +35,9 @@ export default function ExperienceCard({
         [baseTheme.breakpoints.down("md")]: {
           flexDirection: "column",
           alignItems: "flex-end",
+          justifyContent: "space-between",
         },
-        justifyContent: "flex-start",
+        justifyContent: "space-between",
         alignItems: "center",
         width: "100%",
         height: 500,
@@ -66,15 +67,7 @@ export default function ExperienceCard({
         }}
       />
 
-      <CardContent
-        sx={{
-          display: "flex",
-          height: "100%",
-          flexDirection: "column",
-          justifyContent: "flex-end",
-          alignSelf: "flex-end",
-        }}
-      >
+      <CardContent>
         <Typography
           gutterBottom
           align="right"
@@ -93,24 +86,24 @@ export default function ExperienceCard({
         >
           {description}
         </Typography>
-      </CardContent>
 
-      <Box sx={{ flexDirection: "row", justifyContent: "flex-end" }}>
-        {technologies.map((tech, index) => (
-          <Chip
-            key={index}
-            label={tech}
-            sx={{
-              bgcolor: "rgb(209,131,169)",
-              border: "1px solid rgb(75,21,53)",
-              "& .MuiChip-label": {
-                color: "rgb(255, 236, 201)",
-                fontFamily: "'Roboto', sans-serif",
-              },
-            }}
-          ></Chip>
-        ))}
-      </Box>
+        <Box sx={{ flexDirection: "row" }}>
+          {technologies.map((tech, index) => (
+            <Chip
+              key={index}
+              label={tech}
+              sx={{
+                bgcolor: "rgb(209,131,169)",
+                border: "1px solid rgb(75,21,53)",
+                "& .MuiChip-label": {
+                  color: "rgb(255, 236, 201)",
+                  fontFamily: "'Roboto', sans-serif",
+                },
+              }}
+            ></Chip>
+          ))}
+        </Box>
+      </CardContent>
     </Card>
   );
 
@@ -118,14 +111,13 @@ export default function ExperienceCard({
     <Card
       sx={{
         display: "flex",
-
+        flexDirection: "column",
         [baseTheme.breakpoints.down("md")]: {
-          flexDirection: "column",
           alignItems: "flex-end",
           justifyContent: "flex-end",
         },
-        justifyContent: "flex-start",
-        alignItems: "center",
+        justifyContent: "flex-end",
+        alignItems: "flex-end",
         width: "100%",
         height: 500,
         bgcolor: "rgba(243,200,221, 0.75)",
