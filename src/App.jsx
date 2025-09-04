@@ -17,6 +17,9 @@ import ExperienceCard from "./assets/ExperienceCard";
 import Footer from "./assets/Footer";
 import AntGame from "./assets/antgame.png";
 import OCamlLogo from "./assets/ocaml.jpg";
+import Skills from "./assets/Skills";
+import PythonLogo from './assets/pythonlogo.png';
+import Screenshot from './assets/WebsiteScreenshot.png';
 
 function App() {
   const experiences = (
@@ -66,13 +69,48 @@ function App() {
             title="Custom Memory Allocator in C"
             description="Implemented a custom multi-pool allocator in C "
             src={MallocImg}
-            technologies={["C", "POSIX", "Unix", "Git", "Make", "gdb"]}
+            technologies={["C", "Unix", "Git"]}
             detailedDescription="Built a custom multi-pool memory allocator supporting allocations of 1–4088 bytes with 8-byte alignment. 
             Implemented malloc, calloc, realloc, and free using explicit free lists to reuse blocks and reduce OS calls.
             Challenges included managing pointer arithmetic safely, maintaining 8-byte alignment across allocations, 
             and ensuring realloc worked correctly without introducing memory errors. 
             The allocator was tested by running standard Unix commands successfully on top of it."
-            detailedTechnologies={["C", "POSIX", "Unix", "Git", "Make", "GDB"]}
+            demolink={
+              "https://drive.google.com/file/d/1-GOOpUg9BkChFyc0Wz5hz9QieUXKTawS/view?usp=sharing"
+            }
+            detailedTechnologies={["C", "Unix", "Git", "Make", "GDB"]}
+            schoolProject={true}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <ProjectCard
+            title="Artist Portfolio Website"
+            description="Built a website for an artist using React.js and Material-UI"
+            src={Screenshot}
+            technologies={["React.js", "JavaScript", "Material-UI"]}
+            detailedDescription=" Project in development. Will be launched no later than Sep 15, 2025.
+            Created a responsive portfolio website for an artist to showcase their work and provide contact information. Implemented smooth scrolling navigation, interactive project cards with flip animations, and a contact form using React.js and Material-UI. Ensured the site was visually appealing and user-friendly across devices."
+            detailedTechnologies={["React.js", "JavaScript", "Material-UI", "HTML", "CSS"]}
+        
+            
+          />
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <ProjectCard
+            title="Part-of-Speech Tagging for a LLM"
+            description="Trained Pythia-160 to differentiate parts of speech in a text"
+            src={PythonLogo}
+            technologies={["Python", "Machine Learning", "scikit-learn"]}
+            detailedDescription="This project has been done as a technical take-home assignment for an Interview-style exam. Trained Pythia-160 on a large dataset to differentiate parts of speech in a text and labeling each word with the POS it belongs to.
+             Repeated the training process on multiple depths: 0, 3, and 10 layers of processing.
+              Used scikit-learn to add metrics and evaluate the accuracy of my trained model.
+              Wrote a comprehensive analysis of my results with the assumptions about the precision of the model."
+            demolink={
+              "https://colab.research.google.com/drive/1QMuchJS1Xg7RwYqtDzrTjgSbk9eprqBT?usp=sharing"
+            }
+            detailedTechnologies={["Python", "Machine Learning", "scikit-learn"]}
+            schoolProject={true}
           />
         </Grid>
 
@@ -91,16 +129,21 @@ function App() {
         <Grid item xs={12} sm={6} md={4} lg={3}>
           <ProjectCard
             title="Bytecode Interpreter"
-            description="Short Description"
+            description="Built a stack-based interpreter in OCaml"
             src={OCamlLogo}
-            technologies={["C", "Git", "Emacs"]}
-            detailedDescription="This is a longer description..."
-            detailedTechnologies={["C", "Git", "Emacs", "Posix"]}
+            technologies={["OCaml"]}
+            detailedDescription="Implemented commands present in every programming language, such as 
+    creating and modifying variables and storing them in the stack corresponding to the scope where the variable has been created; performing simple operations on said variables, like integer operations, concatenating strings, or evaluating booleans.
+Implemented functions which get executed and may return a value which may get tied to a variable or used within a different functions"
+            detailedTechnologies={["OCaml"]}
             demolink={
-              "https://drive.google.com/file/d/15itw1pN9z_rypDZI1kEmkT2R9K0tZwt8/view?usp=sharing"
-            }
+              "https://drive.google.com/file/d/15itw1pN9z_rypDZI1kEmkT2R9K0tZwt8/view?usp=sharing"}
+            schoolProject={true}
+            
           />
         </Grid>
+
+        
       </Grid>
     </Box>
   );
@@ -131,7 +174,6 @@ function App() {
           <Header />
           <AboutMe />
           <Typography
-            id="projects"
             variant="h3"
             sx={{
               color: "rgb(255, 236, 201)",
@@ -141,6 +183,7 @@ function App() {
           >
             Skills
           </Typography>
+          <Skills />
 
           <Typography
             id="projects"

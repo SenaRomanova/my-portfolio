@@ -17,6 +17,7 @@ export default function ProjectCard({
   technologies,
   detailedTechnologies,
   demolink,
+  schoolProject,
 }) {
   const [flipped, setFlipped] = useState(false);
   const [isFlipping, setIsFlipping] = useState(false);
@@ -48,7 +49,8 @@ export default function ProjectCard({
     >
       <CardMedia
         component="img"
-        height="60%"
+        height="40%"
+        width={"auto"}
         image={src}
         alt="Project Image"
         sx={{ borderRadius: 1, border: "1px solid rgb(75,21,53)" }}
@@ -104,6 +106,15 @@ export default function ProjectCard({
               }}
             ></Chip>
           ))}
+          {schoolProject && (
+            <Chip
+              label="School Project"
+              
+              sx={{
+                bgcolor: "rgb(253, 68, 158)",
+                border: "1px solid rgb(75,21,53)",
+              }}
+            ></Chip>)}
         </Box>
       </CardContent>
     </Card>

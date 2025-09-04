@@ -7,6 +7,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import CloseIcon from "@mui/icons-material/Close";
+import Tooltip from "@mui/material/Tooltip";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function Header() {
   const drawerWidth = "90vw";
@@ -42,12 +45,53 @@ export default function Header() {
         </Typography>
 
         <Box>
+          <Tooltip title="GitHub">
+            <IconButton 
+                size="large"
+                component="a" 
+                href="https://github.com/SenaRomanova" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                sx={{
+                    width: 50, //clickable area
+                    height: 50,
+                    color: "white",
+                    "&:hover": { color: "rgb(209,131,169)" },
+                    paddingRight: 2
+                }}
+            >
+                {/* visual */}
+                <GitHubIcon sx={{fontSize: 35}} /> 
+            </IconButton>
+        </Tooltip>
+
+        <Tooltip title="LinkedIn">
+            <IconButton 
+                size="large"
+                component="a" 
+                href="https://www.linkedin.com/in/kroma5/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                sx={{
+                    width: 50, //clickable area
+                    height: 50,
+                    color: "white",
+                    "&:hover": { color: "rgb(209,131,169)" }
+                    , paddingRight: 2
+                }}
+            >
+                {/* visual */}
+                <LinkedInIcon sx={{fontSize: 35}} /> 
+            </IconButton>
+        </Tooltip>
           <Button
             component="a"
             href="https://drive.google.com/file/d/1UKvCxVP88i-m1i4gH8f-aZ7Zl89Vf5iu/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             color="white"
+            sx={{"&:hover": { color: "rgb(209,131,169)" }}}
+            
           >
             {/*scroll behavior smooth in css html is what actually made it smooth*/}
             Resume
@@ -61,13 +105,7 @@ export default function Header() {
             Projects
           </Button>
 
-          <Button
-            href="#experience"
-            color="white"
-            sx={{ "&:hover": { color: "rgb(209,131,169)" } }}
-          >
-            Experience
-          </Button>
+          
           <Button
             href="#contact"
             color="white"
