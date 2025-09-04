@@ -15,6 +15,8 @@ import AboutMe from "./assets/AboutMe";
 import ContactForm from "./assets/ContactMe";
 import ExperienceCard from "./assets/ExperienceCard";
 import Footer from "./assets/Footer";
+import AntGame from "./assets/antgame.png";
+import OCamlLogo from "./assets/ocaml.jpg";
 
 function App() {
   const experiences = (
@@ -61,34 +63,42 @@ function App() {
       >
         <Grid item xs={12} sm={6} md={4} lg={3}>
           <ProjectCard
-            title="Project 1"
-            description="Short Description"
+            title="Custom Memory Allocator in C"
+            description="Implemented a custom multi-pool allocator in C "
             src={MallocImg}
-            technologies={["C", "Git", "Emacs"]}
-            detailedDescription="This is a longer description..."
-            detailedTechnologies={["C", "Git", "Emacs", "Posix"]}
+            technologies={["C", "POSIX", "Unix", "Git", "Make", "gdb"]}
+            detailedDescription="Built a custom multi-pool memory allocator supporting allocations of 1–4088 bytes with 8-byte alignment. 
+            Implemented malloc, calloc, realloc, and free using explicit free lists to reuse blocks and reduce OS calls.
+            Challenges included managing pointer arithmetic safely, maintaining 8-byte alignment across allocations, 
+            and ensuring realloc worked correctly without introducing memory errors. 
+            The allocator was tested by running standard Unix commands successfully on top of it."
+            detailedTechnologies={["C", "POSIX", "Unix", "Git", "Make", "GDB"]}
           />
         </Grid>
 
         <Grid item xs={12} sm={6} md={4} lg={3}>
           <ProjectCard
-            title="Project 2"
-            description="Short Description"
-            src={MallocImg}
-            technologies={["C", "Git", "Emacs"]}
-            detailedDescription="This is a longer description..."
-            detailedTechnologies={["C", "Git", "Emacs", "Posix"]}
+            title="Incremental Idle Game"
+            description="Created an idle game in Unity using C#"
+            src={AntGame}
+            technologies={["C#", "Unity", "PlasticSCM"]}
+            detailedDescription="Worked in a team to build an incremental idle game in Unity, focusing on economy systems for resource exchange, scaling, and progression. A key challenge was managing and passing data for purchasable components across multiple in-game shops, which I solved using scriptable objects for flexibility and extensibility. Also implemented a dynamic UI that updated with player state and ensured systems were scalable for future additions."
+            detailedTechnologies={["C#", "Unity", "PlasticSCM"]}
+            demolink={"https://rarechip.itch.io/incrementalsomething"}
           />
         </Grid>
 
         <Grid item xs={12} sm={6} md={4} lg={3}>
           <ProjectCard
-            title="Project 3"
+            title="Bytecode Interpreter"
             description="Short Description"
-            src={MallocImg}
+            src={OCamlLogo}
             technologies={["C", "Git", "Emacs"]}
             detailedDescription="This is a longer description..."
             detailedTechnologies={["C", "Git", "Emacs", "Posix"]}
+            demolink={
+              "https://drive.google.com/file/d/15itw1pN9z_rypDZI1kEmkT2R9K0tZwt8/view?usp=sharing"
+            }
           />
         </Grid>
       </Grid>
@@ -120,6 +130,17 @@ function App() {
         >
           <Header />
           <AboutMe />
+          <Typography
+            id="projects"
+            variant="h3"
+            sx={{
+              color: "rgb(255, 236, 201)",
+              paddingTop: 10,
+              paddingBottom: 2,
+            }}
+          >
+            Skills
+          </Typography>
 
           <Typography
             id="projects"
@@ -130,14 +151,14 @@ function App() {
               paddingBottom: 2,
             }}
           >
-            My Projects
+            Projects
           </Typography>
 
           {projects}
 
           <Box sx={{ width: "100%", height: "10vh" }} />
 
-          <Typography
+          {/* <Typography
             variant="h3"
             id="experience"
             sx={{
@@ -148,7 +169,7 @@ function App() {
           >
             Work Experience
           </Typography>
-          {experiences}
+          {experiences} */}
 
           <Box sx={{ width: "100%", height: "10vh" }} />
 

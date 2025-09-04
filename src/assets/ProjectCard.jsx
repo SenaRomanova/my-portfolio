@@ -6,6 +6,8 @@ import { Chip } from "@mui/material";
 import Box from "@mui/material/Box";
 import "@fontsource/roboto/300.css";
 import { useState } from "react";
+import LaunchIcon from "@mui/icons-material/Launch";
+import Button from "@mui/material/Button";
 
 export default function ProjectCard({
   src,
@@ -14,6 +16,7 @@ export default function ProjectCard({
   detailedDescription,
   technologies,
   detailedTechnologies,
+  demolink,
 }) {
   const [flipped, setFlipped] = useState(false);
   const [isFlipping, setIsFlipping] = useState(false);
@@ -50,7 +53,17 @@ export default function ProjectCard({
         alt="Project Image"
         sx={{ borderRadius: 1, border: "1px solid rgb(75,21,53)" }}
       />
-      <CardContent>
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          alignItems: "flex-end",
+          height: "100%",
+          paddingBottom: 1,
+          paddingTop: 1,
+        }}
+      >
         <Typography
           gutterBottom
           align="right"
@@ -70,7 +83,13 @@ export default function ProjectCard({
           {description}
         </Typography>
 
-        <Box sx={{ flexDirection: "row", paddingTop: 1 }}>
+        <Box
+          sx={{
+            flexDirection: "row",
+            paddingTop: 1,
+            justifyContent: "flex-end",
+          }}
+        >
           {technologies.map((tech, index) => (
             <Chip
               key={index}
@@ -117,6 +136,22 @@ export default function ProjectCard({
         <Typography variant="body2" sx={{ color: "rgb(71,21,53)" }}>
           {detailedDescription}
         </Typography>
+
+        {demolink && (
+          <Button
+            component="a"
+            href={demolink}
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              color: "rgb(71,21,53)",
+              "&:hover": { color: "rgb(118, 71, 134)" },
+            }}
+          >
+            <LaunchIcon sx={{ marginRight: 1 }} />
+            Demo
+          </Button>
+        )}
 
         <Box sx={{ flexDirection: "row", paddingTop: 1 }}>
           {detailedTechnologies.map((tech, index) => (
