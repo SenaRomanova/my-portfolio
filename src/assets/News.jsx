@@ -44,8 +44,12 @@ export default function AboutMe() {
           <ul>
             <li>
               I have started learning ASP.NET and how to apply my gamedev-born
-              knoledge of C# to web development and backend systems. You can
-              check out my progress here:
+              knoledge of C# to web development and backend systems.
+              <br />
+              In order to do that, I am building a practice CRUD application
+              that represents a simple game store.
+              <br />
+              You can check out my progress here:
               <Button
                 component="a"
                 variant="outlined"
@@ -54,6 +58,7 @@ export default function AboutMe() {
                 rel="noopener noreferrer"
                 sx={{
                   margin: 1,
+                  marginLeft: 3,
                   borderColor: "rgb(173, 144, 163)",
                   color: "rgb(231, 131, 195)",
                   "&:hover": { color: "rgb(163, 70, 194)" },
