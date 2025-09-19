@@ -35,10 +35,8 @@ export default function AboutMe() {
           variant="body1"
           sx={{ color: "rgb(255, 236, 201)", paddingRight: 3 }}
         >
-          Hello! I'm Sena Romanova, a passionate software developer with a love
-          for creating innovative solutions. With a background in computer
-          science and a knack for problem-solving, I enjoy tackling complex
-          challenges and turning ideas into reality. When I'm not coding, you
+          Hello! I'm Sena Romanova, a passionate software developer with deep love for solving problems. With a background in computer
+          science and a love for challenge, I use my skills to turn ideas into reality. When I'm not coding, you
           can find me drawing, cooking, or indulging in my love for video games.
           Let's connect and create something amazing together!
         </Typography>
