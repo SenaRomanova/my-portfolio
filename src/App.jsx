@@ -18,8 +18,9 @@ import Footer from "./assets/Footer";
 import AntGame from "./assets/antgame.png";
 import OCamlLogo from "./assets/ocaml.jpg";
 import Skills from "./assets/Skills";
-import PythonLogo from './assets/pythonlogo.png';
-import Screenshot from './assets/WebsiteScreenshot.png';
+import PythonLogo from "./assets/pythonlogo.png";
+import Screenshot from "./assets/WebsiteScreenshot.png";
+import News from "./assets/News";
 
 function App() {
   const experiences = (
@@ -90,9 +91,13 @@ function App() {
             technologies={["React.js", "JavaScript", "Material-UI"]}
             detailedDescription=" Project in development. Will be launched no later than Sep 15, 2025.
             Created a responsive portfolio website for an artist to showcase their work and provide contact information. Implemented smooth scrolling navigation, interactive project cards with flip animations, and a contact form using React.js and Material-UI. Ensured the site was visually appealing and user-friendly across devices."
-            detailedTechnologies={["React.js", "JavaScript", "Material-UI", "HTML", "CSS"]}
-        
-            
+            detailedTechnologies={[
+              "React.js",
+              "JavaScript",
+              "Material-UI",
+              "HTML",
+              "CSS",
+            ]}
           />
         </Grid>
 
@@ -109,7 +114,11 @@ function App() {
             demolink={
               "https://colab.research.google.com/drive/1QMuchJS1Xg7RwYqtDzrTjgSbk9eprqBT?usp=sharing"
             }
-            detailedTechnologies={["Python", "Machine Learning", "scikit-learn"]}
+            detailedTechnologies={[
+              "Python",
+              "Machine Learning",
+              "scikit-learn",
+            ]}
             schoolProject={true}
           />
         </Grid>
@@ -137,13 +146,11 @@ function App() {
 Implemented functions which get executed and may return a value which may get tied to a variable or used within a different functions"
             detailedTechnologies={["OCaml"]}
             demolink={
-              "https://drive.google.com/file/d/15itw1pN9z_rypDZI1kEmkT2R9K0tZwt8/view?usp=sharing"}
+              "https://drive.google.com/file/d/15itw1pN9z_rypDZI1kEmkT2R9K0tZwt8/view?usp=sharing"
+            }
             schoolProject={true}
-            
           />
         </Grid>
-
-        
       </Grid>
     </Box>
   );
@@ -173,6 +180,7 @@ Implemented functions which get executed and may return a value which may get ti
         >
           <Header />
           <AboutMe />
+          <News />
           <Typography
             variant="h3"
             sx={{

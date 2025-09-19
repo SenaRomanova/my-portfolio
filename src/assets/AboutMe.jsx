@@ -21,7 +21,7 @@ export default function AboutMe() {
         marginTop: 5,
       }}
     >
-      <Box sx={{ padding: 3 }}>
+      <Box>
         <Typography
           variant="h3"
           sx={{
